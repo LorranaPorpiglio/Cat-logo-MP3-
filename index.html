@@ -46,7 +46,10 @@ Informações importantes para realizar sua compra:</p>
         <div class="natural">
           <div class="titulo" style=" background-image: url(https://i.imgur.com/knVGVqb.jpeg);"><h2>Linha Natural</h2></div>
         </div>
-        <div class="porcelana"></div>
+        <div class="porcelana"><div class="titulo" style=" background-image: url(https://i.imgur.com/knVGVqb.jpeg);"><h2>Linha Portuguesa</h2></div></div>
+        <div class="vela">
+          <div class="titulo" style=" background-image: url(https://i.imgur.com/knVGVqb.jpeg);"><h2>Velas</h2></div>
+        </div>
         </div>
       </article>
     </section>
@@ -755,6 +758,15 @@ if (gruposDecoracao.includes(grupo)) {
         case "MADEIRA":
             destino = $(".decoração .natural");
             break;
+
+         case "CERAMICA":
+            destino = $(".decoração .porcelana");
+            break;
+
+         case "VELA":
+            destino = $(".decoração .vela");
+            break;
+
 
         default:
             destino = $(".decoração .natural");
