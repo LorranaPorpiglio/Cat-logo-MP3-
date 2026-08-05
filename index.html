@@ -594,7 +594,8 @@ article[data-img="/Y3zstzE.png"]{ flex-direction: column-reverse; flex: 100%; }
 article[data-img="/1nKRwSW.png"] > div,
 article[data-img="/Y3zstzE.png"] > div { align-self: flex-start; }
 </style>
-<script>function montarHeader() {
+<script>
+  function montarHeader() {
   const $header = $("header");
 
   $header.empty();
@@ -623,6 +624,11 @@ article[data-img="/Y3zstzE.png"] > div { align-self: flex-start; }
 
       $(".catalogoBtn").removeClass("active");
       $(this).addClass("active");
+      
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth" 
+      });
     });
   });
 
@@ -707,7 +713,18 @@ const gruposJardim = [
     "FLORES"
 ];
 
+function limparCatalogo() {
+    $(".decoração .acrilico").empty();
+    $(".decoração .vidro").empty();
+    $(".decoração .natural").empty();
+
+    $(".iluminação .conteudo").empty();
+    $(".jardim .conteudo").empty();
+}
+
 function carregarCatalogo() {
+  
+  limparCatalogo();
 
     fetch(URL + "?aba=Produtos&t=" + Date.now(), {
         cache: "no-store"
@@ -852,8 +869,11 @@ if ((produto["LEGENDA"] || "").toUpperCase() === "OUTLET" && produto["VALOR OUTL
 
 }
 
-
 carregarCatalogo();
+
+setInterval(() => {
+    carregarCatalogo();
+}, 30000);
 
 async function gerarPDF() {
 
@@ -917,6 +937,7 @@ async function gerarPDF() {
 $("#gerarPDF").on("click", function () {
   
     gerarPDF();
-});</script>
+});
+</script>
 </body>
 </html>
