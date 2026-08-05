@@ -713,19 +713,11 @@ const gruposJardim = [
     "FLORES"
 ];
 
-function limparCatalogo() {
-    $(".decoração .acrilico").empty();
-    $(".decoração .vidro").empty();
-    $(".decoração .natural").empty();
 
-    $(".iluminação .conteudo").empty();
-    $(".jardim .conteudo").empty();
-}
 
 function carregarCatalogo() {
   
-  limparCatalogo();
-
+ 
     fetch(URL + "?aba=Produtos&t=" + Date.now(), {
         cache: "no-store"
     })
