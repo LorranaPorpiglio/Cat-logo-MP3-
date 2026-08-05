@@ -550,9 +550,15 @@ article > div > div span b {
     left: 10px;
 }
 
-  article[data-img="/7VgaxVr.png"] { flex-direction: column !important; }
-  article[data-img="/7VgaxVr.png"] > div { flex-direction: row; scale: 0.9; margin-bottom: 20px; }
-  article[data-img="/7VgaxVr.png"] .outlet:after { bottom: -39px !important; line-height: 1; }
+  article[data-img="/7VgaxVr.png"],
+  article[data-img="/pw7KKwR.png"]{ flex-direction: column !important; }
+  
+  article[data-img="/7VgaxVr.png"] > div,
+  article[data-img="/pw7KKwR.png"] > div { flex-direction: row; scale: 0.9; margin-bottom: 20px; }
+  
+  article[data-img="/7VgaxVr.png"] .outlet:after,
+  article[data-img="/pw7KKwR.png"] .outlet:after { bottom: -39px !important; line-height: 1; }
+
   
 @media print {
 
